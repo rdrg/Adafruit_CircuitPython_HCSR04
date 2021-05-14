@@ -53,7 +53,7 @@ _USE_PULSEIO = False
 try:
     from pulseio import PulseIn
     _USE_PULSEIO = True
-except ImportError:
+except (ImportError, NotImplementedError) as e:
     pass   # This is OK, we'll try to bitbang it!
 
 __version__ = "0.0.0-auto.0"
